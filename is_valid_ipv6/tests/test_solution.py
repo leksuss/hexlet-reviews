@@ -10,11 +10,12 @@ def test_is_valid_ipv6():
     assert is_valid_ipv6('::') is True
     assert is_valid_ipv6('::1') is True
     assert is_valid_ipv6('1::1') is True
-    assert is_valid_ipv6('2a02:0cb41:0:0:0:0:0:7') is True
+    assert is_valid_ipv6('2a02:cb41:0:0:0:0:0:7') is True
     assert is_valid_ipv6('e:6c::647:50:0:7') is True
     assert is_valid_ipv6('04:07A1:1404:0A0:A:080F:080:0') is True
 
     assert is_valid_ipv6('2607:G8B0:4010:801::1004') is False
+    assert is_valid_ipv6('2001::0:64::2') is False
     assert is_valid_ipv6('2001') is False
     assert is_valid_ipv6('2001:::') is False
     assert is_valid_ipv6('2.001::') is False
@@ -26,3 +27,4 @@ def test_is_valid_ipv6():
     assert is_valid_ipv6('5c03:0:a::b825:d690:4ce0:2831:acf0') is False
     assert is_valid_ipv6(':1::1') is False
     assert is_valid_ipv6('1::1:') is False
+    assert is_valid_ipv6('2a02:0cb41:0:0:0:0:0:7') is False
